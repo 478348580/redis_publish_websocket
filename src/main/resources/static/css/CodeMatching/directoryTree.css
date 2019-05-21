@@ -1,0 +1,156 @@
+/* Demo page styles
+-------------------------------------------------------------- */
+.box {
+  overflow: scroll;
+  max-height: 80vh;
+}
+
+/* The list style
+-------------------------------------------------------------- */
+.directory-list {
+  padding: 0;
+}
+
+.directory-list ul {
+  margin-left: 10px;
+  padding: 0;
+  border-left: 1px dashed #ddd;
+}
+
+.directory-list li {
+  list-style: none;
+  color: #888;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.directory-list a {
+  border-bottom: 1px solid transparent;
+  color: #888;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.directory-list a:hover {
+  border-color: #eee;
+  color: #000;
+}
+
+.directory-list .folder,
+.directory-list .folder > a {
+  color: #777;
+  font-weight: bold;
+}
+
+
+/* The icons
+-------------------------------------------------------------- */
+.folder-arrow, .folder-icon, .folder-text, .file-arrow, .file-icon, .file-text{
+  float: left;
+  height: 17px;
+  line-height: 17px;
+  margin: 2.5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.folder-box, .file-box{
+  width: 1000px;
+}
+
+.file-box{
+  cursor: pointer;
+}
+
+.folder-box:hover, .file-box:hover{
+  background-color: #ccc;
+}
+
+.folder-arrow, .file-arrow {
+  width: 10px;
+  background-image: url(../../assets/func_img/folder-right.png);
+}
+
+a.open .folder-arrow{
+  background-image: url(../../assets/func_img/folder-down.png);
+}
+
+.folder-icon {
+  width: 22px;
+  background-image: url(../../assets/func_img/folder.png);
+}
+
+.file-icon {
+  background-size: 100%;
+  width: 17px;
+  background-image: url(../../assets/icon/folder-icon.png);
+}
+
+/*
+.directory-list li:before {
+  margin-right: 10px;
+  content: "";
+  height: 20px;
+  vertical-align: middle;
+  width: 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: url(../../assets/txt.png);
+  background-position: center 2px;
+  background-size: 100% auto;
+}
+
+.directory-list .folder-icon {
+  background-image: url(../../assets/folder-icon.png);
+  background-position: center top;
+  background-size: 100% auto;
+}*/
+/*
+.folder-arrow, .folder-icon, .folder-text {
+  float: left;
+}
+
+.folder-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url(../../assets/folder-icon.png);
+}
+
+.folder-arrow {
+  width: 6px;
+  height: 10px;
+  background-image: url(../../assets/folder-right.png);
+}
+
+.clearfix:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden
+}
+
+
+
+.folderIcon{
+  background-image: url(../../assets/folder-icon.png);
+}
+
+.folderArro{
+  background-image: url(../../assets/folder-right.png);
+}
+
+.folderArro.open{
+  background-image: url(../../assets/folder-down.png);
+}
+
+.fileIcon{
+  background-image: url(../../assets/txt.png);
+}
+
+.fileArro{
+  background-image: url(../../assets/folder-right.png);
+}
+*/
+

@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
+
+mybatis:
+  # 扫描实体类和mapping里面的XML文件
+  type-aliases-package: com.pf.org.cms.hcg.system.bean
+  mapper-locations: classpath:mapping/*.xml
+
+
+

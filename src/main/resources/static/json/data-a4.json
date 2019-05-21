@@ -1,0 +1,15 @@
+{
+  "error_code": 0,
+  "data":{
+    "triggerable_count":{
+      "triggerable_bug_high": 3,
+      "triggerable_bug_middle": 4,
+      "triggerable_bug_low": 5
+    },
+    "bug_count":{
+      "bug_high":5,
+      "bug_middle":10,
+      "bug_low":55
+    }
+  }
+}

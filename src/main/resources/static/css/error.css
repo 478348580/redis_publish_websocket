@@ -1,0 +1,63 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #f2f4f6;
+    color: #323a45;
+}
+.container{
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.container .prompt-box{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.container .prompt-image{
+    max-height: 250px;
+    overflow: visible;
+}
+
+.container .prompt-image img{
+    max-width: 400px;
+    overflow: visible;
+}
+.container h1{
+    font-size: 8em;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+.container h2 {
+    font-weight: bold;
+}
+.container p{
+    font-size: 20px;
+}
+.container .buttons{
+    margin-top: 20px;
+}
+.container .buttons .button {
+    padding: 5px 10px;
+}
+#statusCode {
+    display: none;
+}
+
+.clearfix:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden
+}

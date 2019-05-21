@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"
+          id="viewport">
+    <link rel="icon" type="image/x-icon" href="https://dn-coding-net-production-static.codehub.cn/platform/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://dn-coding-net-production-static.codehub.cn/platform/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+    <title>404 Not Found</title>
+    <style type="text/css">
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: #f2f4f6;
+            color: #323a45;
+        }
+        .container{
+            text-align: left;
+            vertical-align: middle;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .container .prompt-box{
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container .prompt-image{
+            max-height: 250px;
+            overflow: visible;
+        }
+
+        .container .prompt-image img{
+            max-width: 400px;
+            overflow: visible;
+        }
+        .container h1{
+            font-size: 8em;
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+        }
+        .container h2 {
+            font-weight: bold;
+        }
+        .container p{
+            font-size: 20px;
+        }
+        .container .buttons{
+            margin-top: 20px;
+        }
+        .container .buttons .button {
+            padding: 5px 10px;
+        }
+        #statusCode {
+            display: none;
+        }
+
+        .clearfix:after {
+          content:".";
+          display:block;
+          height:0;
+          clear:both;
+          visibility:hidden
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="prompt-box row clearfix">
+        <div class="prompt-message col-md-7 col-sm-6">
+            <div>
+                <h1 id="errCode">404!</h1>
+                <p id="errInfo">404页面，我找不到你，我找不到你啊～</p>
+                <span id="statusCode" th:text="${statusCode}">状态码</span>
+            </div>
+            <div class="buttons">
+                <a class="btn btn-primary button" href="../../views/Management.html">返回首页</a>
+                <a class="btn btn-primary button" href="../login">返回登录</a>
+                <a class="btn btn-primary button" href="../logout">退出登录</a>
+            </div>
+        </div>
+        <div class="prompt-image col-md-5 col-sm-6">
+            <img id="errorImg" src="../assets/basic_img/404.png" alt="">
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var code = document.getElementById("statusCode").innerHTML;
+    $("#errCode").html(code + "!");
+    
+    switch(code){
+        case "404":
+            $("#errInfo").html("这个页面度假去了!");
+            $("#errorImg").attr('src', "../assets/basic_img/404.png")
+            break;
+        case "500":
+            $("#errInfo").html("服务器只能坚持到这儿了...");
+            $("#errorImg").attr('src', "../assets/basic_img/500.png")
+            break;
+        default:
+            break;
+    }
+</script>
+</html>

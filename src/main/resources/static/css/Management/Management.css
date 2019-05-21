@@ -1,0 +1,497 @@
+#project-table td.all_num, #project-table td.trigger_num {
+	min-width: 140px;
+}
+/*看板开始*/
+.board {
+	position: relative;
+	height: 88px;
+	background-color: #ededed;
+	padding-top: 44px;
+	border-bottom: 1px solid #dedede;
+}
+
+.board-left {
+	position: absolute;
+	left: 40px;
+	top: 27px;
+	cursor: pointer;
+}
+
+.watchBoard {
+	font-size: 20px;
+	color: #333333;
+	position: relative;
+	top: 2px;
+	left: 4px;
+}
+.board .nav li a{
+	color: #333333;
+}
+.board .nav li.active a span{
+	color: #8181ce !important;
+}
+.board .nav li span{
+	display: inline-block;
+	padding-left: 21px;
+	position: relative;
+}
+.board .nav .nav-project span:before{
+	content: '';
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url(../../assets/func_img/project.png) no-repeat;
+	position: absolute;
+	left: 0px;
+	top: 3px;
+}
+.board .nav .nav-project.active span:before{
+	background: url(../../assets/func_img/project-active.png) no-repeat;
+}
+.board .nav .nav-module span:before{
+	content: '';
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url(../../assets/func_img/assembly.png) no-repeat;
+	position: absolute;
+	left: 0px;
+	top: 3px;
+}
+.board .nav .nav-module.active span:before{
+	background: url(../../assets/func_img/assembly-active.png) no-repeat;
+}
+.board .nav .nav-bug span:before{
+	content: '';
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: url(../../assets/func_img/security.png) no-repeat;
+	position: absolute;
+	left: 0px;
+	top: 3px;
+}
+.board .nav .nav-bug.active span:before{
+	background: url(../../assets/func_img/security-active.png) no-repeat;
+}
+.board ul {
+	float: right;
+	padding-right: 30px;
+}
+
+.board ul li a span {
+	font-size: 16px;
+	color: #333333;
+}
+
+.board ul li a .img {
+	vertical-align: -2px;
+}
+
+.board ul li a .img-active {
+	display: none;
+	vertical-align: -2px;
+}
+/* 修改ie下出现滚动条 */
+.nav-tabs{
+	border-bottom: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	border-bottom: none;
+}
+.nav-tabs > li > a{
+	border: none;
+}
+.mod-name {
+    max-width: 252px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*.span-active{*/
+	/*color: #8181ce !important;*/
+/*}*/
+/*中间内容开始*/
+.div-module{
+	background: #fff;
+	display: none;
+	padding: 0 30px 0 40px;
+}
+.left-table>tbody>tr>td{
+	padding: 4px;
+}
+.analysis-progress{
+	margin-left: 10px;
+	margin-right: 12px;
+	cursor: pointer;
+	background-size: 14px 17px;
+	float: left;
+	width: 16px;
+	height: 22px;
+	background: url("../../assets/func_img/pause.png") center no-repeat;
+}
+.project-reupload {
+	cursor: pointer;
+}
+
+.analysis-start.analysis-progress {
+	background: url("../../assets/func_img/start.png") center no-repeat;
+}
+.cont-right{
+	padding-right: 0;
+}
+.right-header{
+	margin: 13.5px 0px;
+}
+.bug_level .text-right::before, .bug_source .text-right::before, .source-type::before {
+	content: '';
+	position: absolute;
+	background: url(../../assets/func_img/filter-icon.png) no-repeat center;
+	margin-top: 4px;
+	width: 12px;
+	height: 12px;
+    left: -10px;
+}
+.thead-td{
+	display: inline-block;
+}
+.table{
+	font-size: 16px;
+	border-bottom: none;
+}
+.td-center{
+	text-align: center;
+}
+.smallBtn{
+	width: 60px;
+	height: 22px;
+	font-size: 12px;
+	padding: 0;
+	text-align: center;
+	line-height: 17px;
+}
+
+.cancel{
+	background: #d8d8d8;
+}
+.topping{
+	background: #8181ce;
+	color: #ffffff;
+	border-color: #8181CE;
+}
+.collection>img,
+.collected>img{
+	margin-right: 3px;
+	vertical-align: 0;
+}
+.collection{
+	background: #d89e3e;
+	color: #ffffff;
+}
+.collection:active,
+.collection:focus,
+.collection:hover,
+.collection:active:hover{
+	background: #e6aa42;
+	color: #ffffff;
+}
+.collected{
+	background: #d8d8d8;
+}
+.RED{
+	display: inline-block;
+	background: red;
+	width: 70px;
+	height: 22px;
+}
+.new-project{
+	float: left;
+}
+.new-project-btn{
+	background-color: #8181ce;
+	width: 111px;
+	height: 30px;
+	border: 1px solid #8181ce;
+	border-radius: 0;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 4px;
+}
+.new-project-btn:hover{
+	background-color: #6b74b7;
+	color: #ffffff;
+	border: 1px solid #6b74b7;
+}
+.new-project-btn>img{
+    margin-right: 7.5px;
+    margin-bottom: 3px;
+}
+/*检测状态start*/
+.status-bar{
+	line-height: 30px;
+}
+
+.status-bar .progress,.status-bar .progress-bar{
+	border-radius: 10px;
+}
+
+.status-bar .progress{
+	margin:0px;
+	padding: 0px; 
+	top:5px;/*让进度条垂直居中，可用更响应式的方式替换*/
+}
+.progress.active .progress-bar {
+    -webkit-animation: progress-bar-stripes 1s linear infinite;
+    -o-animation: progress-bar-stripes 1s linear infinite;
+    animation: progress-bar-stripes 1s linear infinite;
+}
+.status-bar .progress-bar{
+	background-color: #8181ce;
+}
+
+.progress-start {
+	white-space: nowrap;
+}
+
+/*检测状态end*/
+.progress-status{
+	width: 450px;
+	margin-left: 27%;
+	padding-top: 21px;
+}
+.progress-bg{
+	display: inline-block;
+	vertical-align: -3px;
+	margin: 0 10px;
+	width: 323px;
+	height: 16px;
+	border-radius: 9.5px;
+	box-shadow: inset 0 0 3px 0;
+}
+.progress-bg-bar{
+	background: #8181ce;
+	border-radius: 9.5px;
+}
+.placeholder{
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+}
+/*.td-height{
+	height: 44px;
+	line-height: 27px !important;
+}*/
+.download-label{
+	width: 38px;
+	height: 22px;
+	line-height: 22px;
+	background: #42b8aa;
+	border-radius: 2px;
+	text-align: center;
+	padding: 0;
+	border: none;
+}
+.download-label:hover{
+	background: #42c7b9;
+}
+.download-label>img{
+	vertical-align: 0;
+}
+/*新建项目弹窗*/
+.inline1{
+	height: 46px;
+	line-height: 30px;
+}
+.modal-header{
+	line-height: 30px;
+}
+.modal-body{
+	color: #666666;
+}
+.modal-label{
+	font-weight: normal;
+	text-align: right;
+}
+.form-way{
+	margin-top: 14px;
+}
+.repository{
+	display: inline-block;
+	width: 800px;
+}
+.radio-inline{
+	margin-left: 5px;
+	height: 30px;
+	padding-top: 5px;
+}
+
+input[name='importMethod']{
+    width: 16px;
+    height: 18px;
+	margin-top: 2px !important;
+}
+
+/** bootstrapValidator样式 开始 **/
+.help-block{
+	margin: 0;
+}
+.form-control-feedback {
+	height: 30px;
+	line-height: 30px;
+}
+.new-project-local .form-control-feedback.glyphicon.glyphicon-remove,.new-project-local .form-control-feedback.glyphicon.glyphicon-ok{
+	display: none !important;
+}
+.list-unstyled label{
+	font-weight: 400;
+}
+/** bootstrapValidator样式 结束 **/
+
+.new-project-local{
+	margin-top: 50px;
+	margin-bottom: 0;
+}
+.svn-local{
+	/*display: none;*/
+	position: absolute;
+	width: 320px;
+	background: #f6f6f6;
+	border: 1px solid #dadada;
+	left: 17%;
+	top: 15px;
+}
+.inline2{
+	height: 28px;
+	line-height: 22px!important;
+}
+.svn-label{
+	width: 87px;
+	text-align: left;
+	padding-left: 20px;
+	font-weight: normal;
+}
+.svn-input{
+	width: 221px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #dadada;
+}
+.check-input{
+	vertical-align: -1px;
+	margin-right: 9px !important;
+}
+.git-local{
+	display: none;
+	position: absolute;
+	background: #f6f6f6;
+	border: 1px solid #dadada;
+	left: 17%;
+	top: 45px;
+}
+.branch-btn{
+	background-color: #8181ce;
+	width: 76px;
+	height: 25px;
+	border: 1px solid #8181ce;
+	border-radius: 0;
+	font-size: 12px;
+	color: #ffffff;
+	padding: 2px 7px;
+	margin-left: 13px;
+}
+.swal-file-group {
+	position: relative;
+	width: 90px;
+	margin: 0 auto;
+}
+.swal-btn{
+	width: 90px;
+	height: 35px;
+}
+#uploadCompressedFile {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+}
+#reuploadFile {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+}
+.git-local .form-inline label:first-of-type{
+	font-weight: normal;
+}
+.red-prompt{
+	color: #c66868;
+	margin: 0 10px;
+	font-weight: normal;
+	vertical-align: -1px;
+}
+.archive-local{
+	display: none;
+	position: absolute;
+	bottom: 0px;
+	left: 17%;
+}
+.archive-local>span{
+	margin-left: 13px;
+	vertical-align: middle;
+	color: #b8b8b8;
+}
+.folder-local{
+	display: none;
+	position: absolute;
+	bottom: 33px;
+	left: 25%;
+}
+.folder-local>span{
+	margin-left: 13px;
+	vertical-align: middle;
+	color: #b8b8b8;
+}
+.branch-btn:hover{
+	background: #6b74b7;
+	color: #ffffff;
+	border: 1px solid #6b74b7;
+}
+.upfile{
+	position: absolute;
+	opacity: 0.4;
+
+}
+/*项目，组件，安全表格td宽度*/
+.module-table1>.th-inner{
+	margin-left: 41px;
+}
+tbody>tr>.module-table1{
+	padding-left: 45px !important;
+}
+/*.form-control[disabled], .form-control[readonly], fieldset[disabled]*/
+.form-control, #release-time{
+	background: #fff;
+}
+.input-group-addon{
+	background: #fff;
+	padding: 6px 8px;
+	border: none;
+	color: transparent;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+[class*=" datetimepicker-dropdown"]:before,[class*=" datetimepicker-dropdown"]:after{
+	display: none !important;
+}
+.user-management{
+	cursor: pointer;
+}
+.div-module>.row>.col-md-2{
+	padding: 0;
+}
+.new-list-unstyled .radio-inline label{
+	font-weight: normal;
+	cursor: pointer;
+}
+.download-label.btn-default.focus, .download-label.btn-default:focus{
+	background: #42b8aa !important;
+}
