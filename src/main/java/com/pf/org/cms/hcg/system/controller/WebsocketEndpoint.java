@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /***
  * 用“@ServerEndPoint”注解来实现，实现简单；
+ * 分别是用户ID 和用户订阅的主题
  */
 @ServerEndpoint("/socket/{userId}/{topic}")
 @RestController
@@ -50,27 +51,37 @@ public class WebsocketEndpoint {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WebsocketEndpoint.class);
 
-
+    //用来引入刚才在webcoketConfig注入的类
     private RedisMessageListenerContainer container = SpringUtils.getBean("container");
 
 
+    //自定义的消息发送器
     private RedisMessageListener listener;
 
+
+    /***
+     * socket打开的处理逻辑
+     * @param session
+     * @param userId
+     * @param topic
+     * @throws Exception
+     */
     @OnOpen
     public void onOpen(Session session, @PathParam("userId") String userId, @PathParam("topic") String topic) throws Exception {
-        this.session = session;
-        System.out.println(this.session.getId());
-        webSocketSet.add(this);
-        addOnlineCount();
-        getOnlineCount();
-        listener = new RedisMessageListener();
-        listener.setSession(session);
-        listener.setUserId(userId);
-        listener.setOnlineCount(getOnlineCount());
-        System.out.println(container.getClass());
-        System.out.println(container.getClass().getName());
-        container.addMessageListener(listener, new PatternTopic(topic));
         LOGGER.info("打开了Socket链接Open a html. userId={}, name={}", userId, topic);
+        this.session = session;
+        //webSocketSet中存当前对象
+        webSocketSet.add(this);
+        //在线人数加一
+        addOnlineCount();
+        listener = new RedisMessageListener();
+        //放入session
+        listener.setSession(session);
+        //放入用户ID
+        listener.setUserId(userId);
+        //放入在线人数
+        listener.setOnlineCount(getOnlineCount());
+        container.addMessageListener(listener, new PatternTopic(topic));
     }
 
     @OnClose

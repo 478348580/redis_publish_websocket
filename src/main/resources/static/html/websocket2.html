@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
-当前用户ID是：1234563
+当前用户ID是：3333
 <hr/>
 当前订阅的话题是: chat
 <hr/>
@@ -17,8 +17,6 @@
 <button onclick="openWebSocket()">重新打开WebSocket连接</button>
 <hr/>
 <div id="message"></div>
-<hr/>
-<div id="messageHoutai"></div>
 </body>
 
 <script type="text/javascript">
@@ -26,7 +24,7 @@
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
         //23是一个ID ，chat是要订阅的话题
-        websocket = new WebSocket("ws://127.0.0.1:8080/socket/1234563/chat");
+        websocket = new WebSocket("ws://127.0.0.1:8080/socket/333/chat");
 
     } else {
         alert('当前浏览器 Not support websocket')
@@ -45,7 +43,7 @@
     //接收到消息的回调方法
     websocket.onmessage = function (event) {
         console.log(event.data)
-        senHouTai(event.data);
+        setMessageInnerHTML(event.data + "ss");
     }
 
     //连接关闭的回调方法
@@ -62,13 +60,6 @@
     function setMessageInnerHTML(innerHTML) {
         console.log(innerHTML)
         document.getElementById('message').innerHTML += innerHTML + '<br/>';
-    }
-
-
-    //将消息显示在网页上
-    function senHouTai(innerHTML) {
-        console.log(innerHTML)
-        document.getElementById('messageHoutai').innerHTML += innerHTML + '<br/>';
     }
 
     //关闭WebSocket连接
